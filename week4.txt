@@ -1,0 +1,62 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+x=np.random.normal(50,5,3000)
+print("Max is{}".format(max(x)))
+print("Min is{}".format(min(x)))
+print("Max - Min is{}".format(max(x) - min(x)))
+
+## frequancy histogram
+import seaborn as sns
+sns.distplot(x, kde=False , bins=5 ,hist_kws=dict(edgecolor="k", linewidth=2))
+plt.xlabel('Intervals')
+plt.ylabel('Frequancy')
+plt.show()
+
+import seaborn as sns
+sns.distplot(x, kde=False , bins=50 ,hist_kws=dict(edgecolor="k", linewidth=2))
+plt.xlabel('Intervals')
+plt.ylabel('Frequancy')
+plt.show()
+
+import seaborn as sns
+sns.distplot(x, kde=False , bins=30 ,hist_kws=dict(edgecolor="k", linewidth=2))
+plt.xlabel('Intervals')
+plt.ylabel('Reltive Frequancy')
+plt.show()
+
+import seaborn as sns
+sns.distplot(x, kde=False , bins=30 ,hist_kws=dict(edgecolor="k", linewidth=2))
+plt.xlabel('Intervals')
+plt.ylabel('Density')
+plt.show()
+
+plt.axvline(x.mean(),color='b',linestyle='dashed',linewidth=1)
+sns.distplot(x,kde=True,bins=30,hist=False)
+plt.ylabel('Density')
+
+np.median(x)
+
+np.mean(x)
+
+plt.axvline(x.mean(),color='b',linestyle='dashed',linewidth=1)
+plt.axvline(np.median(x),color='r',linestyle='dashed',linewidth=4)
+sns.distplot(x,kde=True,bins=30,hist=False)
+plt.ylabel('Density')
+plt.show()
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+my_list = [1,2,2,2,4,5,6,6,6,9,10,10,10,11,14,14,15,18,19,20]
+df = pd.DataFrame(my_list , columns=['Sample data'])
+sns.boxplot(data=df)
+plt.ylabel('Data ponts')
+
+import numpy as np
+np.percentile(my_list,[25,50,75])
+
+
